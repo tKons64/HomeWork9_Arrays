@@ -10,7 +10,8 @@ public class Main {
         //task1_5();
         //task1_6();
         //task1_7();
-        task1_8();
+        //task1_8();
+        task1_9();
 
     }
 
@@ -174,12 +175,11 @@ public class Main {
         System.out.println(number2);
     }
 
-    public static void task1_8() {
+    public static void task1_9() {
         System.out.println();
-        System.out.println("Задание №1.8. Повышенная сложность");
+        System.out.println("Задание №1.9. Повышенная сложность");
 
         int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
-        //int[] arr = {5, 4, 3, 2, 1};
         int sum = -2;
         int number1 = 0;
         int number2 = 0;
@@ -194,11 +194,12 @@ public class Main {
                 if (total == sum) {
                     number1 = arr[i];
                     number2 = arr[j];
+                    System.out.print(number1 + " + ");
+                    System.out.println(number2 + " = " + sum);
                 }
             }
         }
-        System.out.println(number1);
-        System.out.println(number2);
+
     }
 
 
