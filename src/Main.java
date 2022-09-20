@@ -1,9 +1,14 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        task1_1();
-        task1_2();
-        task1_3();
-        task1_4();
+        //task1_1();
+        //task1_2();
+        //task1_3();
+        //task1_4();
+        //task1_5();
+        //task1_6();
+        task1_7();
 
     }
 
@@ -39,12 +44,12 @@ public class Main {
         int maxValue = 100000;
 
         for (int i = 0; i < arr.length; i++) {
-           if (arr[i] > maxValue){
-               maxValue = arr[i];
-           }
-           if (arr[i] < minValue){
-               minValue = arr[i];
-           }
+            if (arr[i] > maxValue) {
+                maxValue = arr[i];
+            }
+            if (arr[i] < minValue) {
+                minValue = arr[i];
+            }
         }
 
         System.out.println("Минимальная сумма трат за день составила - " + minValue + " рублей");
@@ -63,7 +68,7 @@ public class Main {
             totalSum = totalSum + arr[i];
         }
 
-        averageValueInMonth = (double)totalSum / arr.length;
+        averageValueInMonth = (double) totalSum / arr.length;
 
         System.out.println("Средняя сумма трат за месяц составила - " + averageValueInMonth + " рублей");
     }
@@ -72,16 +77,72 @@ public class Main {
         System.out.println();
         System.out.println("Задание №1.4");
 
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         char[] correctFullName = new char[reverseFullName.length];
 
         for (int i = reverseFullName.length; i > 0; i--) {
-            correctFullName[correctFullName.length-i] = reverseFullName[i-1];
+            correctFullName[correctFullName.length - i] = reverseFullName[i - 1];
         }
 
         for (int i = 0; i < correctFullName.length; i++) {
             System.out.print(correctFullName[i]);
         }
+
+    }
+
+    public static void task1_5() {
+        System.out.println();
+        System.out.println("Задание №1.5. Повышенная сложность");
+
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < matrix.length; i++) {
+            matrix[i][i] = 1;
+            matrix[i][matrix.length - i - 1] = 1;
+        }
+
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void task1_6() {
+        System.out.println();
+        System.out.println("Задание №1.6. Повышенная сложность");
+
+        int[] arr = {5, 4, 3, 2, 1};
+        int[] corectArr = new int[5];
+
+        for (int i : arr) {
+            corectArr[i - 1] = arr[arr.length - i];
+        } // не понял почему отсчет идет в обратном порядке? но в целом работает
+
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(corectArr));
+    }
+
+    public static void task1_7() {
+        System.out.println();
+        System.out.println("Задание №1.7. Повышенная сложность");
+
+        int storage = 0;
+        int middleArray = 0;
+        int[] arr = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr));
+
+        middleArray = (int)(arr.length / 2) + 1;
+
+        for (int i : arr) {
+            storage = arr[i - 1];
+            arr[i - 1] = arr[arr.length - i];
+            arr[arr.length - i] = storage;
+            if (i == middleArray) {
+                break;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
 
     }
 }
