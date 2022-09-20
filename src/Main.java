@@ -6,9 +6,11 @@ public class Main {
         //task1_2();
         //task1_3();
         //task1_4();
+
         //task1_5();
         //task1_6();
-        task1_7();
+        //task1_7();
+        task1_8();
 
     }
 
@@ -132,7 +134,7 @@ public class Main {
         int[] arr = {5, 4, 3, 2, 1};
         System.out.println(Arrays.toString(arr));
 
-        middleArray = (int)(arr.length / 2) + 1;
+        middleArray = (int) (arr.length / 2) + 1;
 
         for (int i : arr) {
             storage = arr[i - 1];
@@ -143,6 +145,61 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(arr));
-
     }
+
+    public static void task1_8() {
+        System.out.println();
+        System.out.println("Задание №1.8. Повышенная сложность");
+
+        int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        //int[] arr = {5, 4, 3, 2, 1};
+        int sum = -2;
+        int number1 = 0;
+        int number2 = 0;
+        int total = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (i == j) {
+                    continue;
+                }
+                total = arr[i] + arr[j];
+                if (total == sum) {
+                    number1 = arr[i];
+                    number2 = arr[j];
+                }
+            }
+        }
+        System.out.println(number1);
+        System.out.println(number2);
+    }
+
+    public static void task1_8() {
+        System.out.println();
+        System.out.println("Задание №1.8. Повышенная сложность");
+
+        int[] arr = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        //int[] arr = {5, 4, 3, 2, 1};
+        int sum = -2;
+        int number1 = 0;
+        int number2 = 0;
+        int total = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (i == j) {
+                    continue;
+                }
+                total = arr[i] + arr[j];
+                if (total == sum) {
+                    number1 = arr[i];
+                    number2 = arr[j];
+                }
+            }
+        }
+        System.out.println(number1);
+        System.out.println(number2);
+    }
+
+
 }
